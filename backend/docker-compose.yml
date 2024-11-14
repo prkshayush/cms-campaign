@@ -1,0 +1,10 @@
+version: '4.0.3'
+services:
+  rabbitmq:
+    image: rabbitmq:4-management
+    ports:
+      - "5672:5672"  # AMQP protocol port
+      - "15672:15672"  # Management interface port
+    environment:
+      - RABBITMQ_DEFAULT_USER=prkshayush
+      - RABBITMQ_DEFAULT_PASS=password123
