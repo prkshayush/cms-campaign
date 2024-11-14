@@ -6,5 +6,5 @@ services:
       - "5672:5672"  # AMQP protocol port
       - "15672:15672"  # Management interface port
     environment:
-      - RABBITMQ_DEFAULT_USER=prkshayush
-      - RABBITMQ_DEFAULT_PASS=password123
+      - RABBITMQ_DEFAULT_USER=${RABBITMQ_DEFAULT_USER}
+      - RABBITMQ_DEFAULT_PASS=${RABBITMQ_DEFAULT_PASS}
