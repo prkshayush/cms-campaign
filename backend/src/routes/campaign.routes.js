@@ -7,8 +7,8 @@ router.post('/', campaignController.createCampaign);
 router.get('/', campaignController.getAllCampaigns);
 router.get('/segment/:segmentId', campaignController.getCampaignsBySegment);
 router.get('/:campaignId', campaignController.getCampaignStats);
-router.patch('/:campaignId/metrics', campaignController.updateCampaignMetrics);
-router.post('/:campaignId/send', campaignController.sendCampaign);
-router.get('/:campaignId/statistics', campaignController.getCampaignStatistics);
+router.patch('/metrics/:campaignId', campaignController.updateCampaignMetrics);
+router.post('/send/:campaignId', campaignController.sendCampaign);
+router.get('/statistics/:campaignId', campaignController.getCampaignStatistics);
 
 export default router;

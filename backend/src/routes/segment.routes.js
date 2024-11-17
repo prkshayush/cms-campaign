@@ -5,6 +5,6 @@ const router = express.Router();
 
 router.post('/', segmentController.createSegment);
 router.get('/', segmentController.getAllSegments);
-router.get('/:segmentId/audience', segmentController.getSegmentAudience);
+router.get('/audience/:segmentId', segmentController.getSegmentAudience);
 
 export default router;

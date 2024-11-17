@@ -1,12 +1,12 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import { useRouter } from 'next/router'
+import { useParams } from 'next/navigation'
 import { apiService } from '@/lib/api'
 
 export default function CampaignDetailPage() {
-  const router = useRouter()
-  const { id } = router.query
+  const params = useParams()
+  const id = params.id
   const [campaign, setCampaign] = useState(null)
   const [loading, setLoading] = useState(true)
 
@@ -37,10 +37,27 @@ export default function CampaignDetailPage() {
       <h1 className="text-2xl font-bold mb-6">Campaign Details</h1>
       <div className="p-4 bg-white rounded shadow">
         <h2 className="text-xl font-semibold">{campaign.name}</h2>
-        <p>Subject: {campaign.subject}</p>
-        <p>Content: {campaign.content}</p>
-        <p>Segment: {campaign.segmentId}</p>
-        <p>Scheduled For: {campaign.scheduledFor}</p>
+        <p className="mt-2 text-gray-600">
+          Status: {campaign.status ? (
+            <span className="font-medium text-gray-900">{campaign.status}</span>
+          ) : (
+            <span className="italic text-gray-400">None</span>
+          )}
+        </p>
+        <p className="mt-2 text-gray-600">
+          Segment: {campaign.segmentId ? (
+            <span className="font-medium text-gray-900">{campaign.segmentId}</span>
+          ) : (
+            <span className="italic text-gray-400">None</span>
+          )}
+        </p>
+        <p className="mt-2 text-gray-600">
+          Scheduled For: {campaign.scheduledFor ? (
+            <span className="font-medium text-gray-900">{campaign.scheduledFor}</span>
+          ) : (
+            <span className="italic text-gray-400">None</span>
+          )}
+        </p>
       </div>
     </div>
   )

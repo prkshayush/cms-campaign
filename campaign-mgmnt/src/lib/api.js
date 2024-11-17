@@ -32,7 +32,7 @@ export const apiService = {
 
 
   updateCampaignMetrics: async (id, data) => {
-    const res = await fetch(`${backendUrl}/campaigns/${id}/metrics`, {
+    const res = await fetch(`${backendUrl}/campaigns/metrics/${id}`, {
       method: 'PATCH',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(data)
