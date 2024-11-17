@@ -32,7 +32,7 @@ export default function LoginPage() {
             <div className="relative z-10 p-6 bg-white rounded-md shadow-md">
                 <h1 className="text-4xl font-bold mb-4">Welcome to Realm</h1>
                 <p className="text-lg mb-4">Member login with Google-Signup.</p>
-                <button className="rounded-3xl bg-blue-600 font-semibold p-3" onClick={handleLogin}>Login/Register</button>
+                <button className="rounded-3xl bg-blue-600 text-slate-100 font-semibold p-3" onClick={handleLogin}>Login/Register</button>
             </div>
         </div>
     )
