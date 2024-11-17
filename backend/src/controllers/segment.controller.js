@@ -1,5 +1,14 @@
 import * as segmentService from '../services/segment.service.js';
 
+export const getAllSegments = async (req, res) => {
+  try {
+    const segments = await segmentService.getAllSegments();
+    res.status(200).json(segments);
+  } catch (error) {
+    res.status(500).json({ error: `Error fetching segments: ${error.message}` });
+  }
+};
+
 export const createSegment = async (req, res) => {
   try {
     const segment = await segmentService.createSegment(req.body);

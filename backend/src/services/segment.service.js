@@ -17,6 +17,15 @@ export const createSegment = async (segmentData) => {
   }
 };
 
+export const getAllSegments = async () => {
+  try {
+    const segments = await Segment.find({});
+    return segments;
+  } catch (error) {
+    throw new Error(`Error fetching segments: ${error.message}`);
+  }
+};
+
 export const getSegmentAudience = async (segmentId) => {
   try {
     const segment = await Segment.findById(segmentId);
