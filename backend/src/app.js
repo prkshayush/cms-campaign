@@ -29,8 +29,13 @@ app.use(express.urlencoded({
 // routes
 import customerRoutes from "./routes/customer.routes.js";
 import orderRoutes from "./routes/orders.routes.js";
+import segmentRoutes from "./routes/segment.routes.js";
+import campaignRoutes from "./routes/campaign.routes.js";
 
 app.use("/api/customers", customerRoutes);
 app.use("/api/orders", orderRoutes);
+app.use('/api/segments', segmentRoutes);
+app.use("/api/campaigns", campaignRoutes);
+
 
 export default app; 

@@ -26,7 +26,12 @@ const customerSchema = new Schema({
     visits: {
         type: Number,
         default: 0,
-    }
+    },
+    lastVisited: {
+        type: Date,
+        default: null,
+    },
+    
 }, {
     timestamps: true,
 })

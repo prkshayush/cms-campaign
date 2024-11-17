@@ -12,7 +12,7 @@ const __dirname = path.dirname(__filename);
 // Load env from correct path
 dotenv.config({ path: path.join(__dirname, '../../.env') });
 
-// dummy credentials for RabbitMQ URL
+// docker RabbitMQ URL
 const RABBITMQ_URL = process.env.RABBIT_URI;
 const QUEUE_NAME = 'orders_queue';
 
